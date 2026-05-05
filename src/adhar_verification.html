@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Aadhaar Authentication | ABHA Creation</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#f9f9ff",
+                        "on-tertiary-fixed-variant": "#753400",
+                        "primary-fixed": "#d6e3ff",
+                        "outline": "#727783",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f2f3fb",
+                        "on-tertiary-container": "#ffdece",
+                        "surface-container": "#ecedf6",
+                        "on-primary-fixed": "#001b3d",
+                        "inverse-on-surface": "#eff0f9",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#424752",
+                        "surface-variant": "#e1e2ea",
+                        "on-secondary-fixed": "#002204",
+                        "on-secondary-container": "#217128",
+                        "secondary-fixed": "#a3f69c",
+                        "on-tertiary-fixed": "#321200",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#c2c6d4",
+                        "surface-container-highest": "#e1e2ea",
+                        "primary-fixed-dim": "#a9c7ff",
+                        "surface-container-high": "#e7e8f0",
+                        "surface-bright": "#f9f9ff",
+                        "on-secondary-fixed-variant": "#005312",
+                        "primary": "#004d99",
+                        "on-surface": "#191c21",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "primary-container": "#1565c0",
+                        "on-primary-fixed-variant": "#00468c",
+                        "surface-dim": "#d8dae2",
+                        "tertiary-container": "#a64c00",
+                        "secondary-fixed-dim": "#88d982",
+                        "surface-tint": "#005db7",
+                        "inverse-primary": "#a9c7ff",
+                        "secondary-container": "#a0f399",
+                        "secondary": "#1b6d24",
+                        "surface": "#f9f9ff",
+                        "tertiary-fixed": "#ffdbc9",
+                        "tertiary": "#813900",
+                        "inverse-surface": "#2e3037",
+                        "tertiary-fixed-dim": "#ffb68c",
+                        "on-background": "#191c21",
+                        "on-primary-container": "#dae5ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "16px",
+                        "xl": "24px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "lg": "24px",
+                        "gutter": "24px",
+                        "xl": "40px",
+                        "sm": "8px",
+                        "container-max": "1440px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "margin": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-xl": ["Plus Jakarta Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .otp-input:focus {
+            box-shadow: 0 0 0 2px rgba(0, 77, 153, 0.2);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+
+<body class="bg-background font-body-md text-on-surface">
+    <header
+        class="fixed top-0 z-50 w-full border-b border-outline-variant bg-white/80 backdrop-blur-md px-margin py-md">
+        <div class="mx-auto flex max-w-[1280px] items-center justify-between">
+             <a href="landing_page.html" class="flex items-center gap-3">
+                    <div class="text-primary-container">
+                        <svg fill="none" height="32" viewbox="0 0 48 48" width="32"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                    <span class="font-headline-lg text-headline-md tracking-tight text-on-surface">AbhaSetu</span>
+                </a>
+            <nav class="hidden md:flex items-center gap-xl">
+                <a class="text-body-md font-semibold text-on-surface-variant hover:text-primary transition-colors"
+                    href="#">How it Works</a>
+                <a class="text-body-md font-semibold text-on-surface-variant hover:text-primary transition-colors"
+                    href="#">Health Locker</a>
+                <a class="text-body-md font-semibold text-on-surface-variant hover:text-primary transition-colors"
+                    href="#">Hospitals</a>
+                <a class="text-body-md font-semibold text-on-surface-variant hover:text-primary transition-colors"
+                    href="#">ABDM Journey</a>
+                <a class="text-body-md font-medium text-on-surface-variant hover:text-primary transition-colors"
+                    href="#">Benefits</a>
+                <a class="text-body-md font-medium text-on-surface-variant hover:text-primary transition-colors"
+                    href="#">Contact</a>
+            </nav>
+            <div class="flex items-center gap-md">
+
+                <button
+                    class="hidden sm:flex h-11 items-center justify-center rounded-lg px-lg 
+                   text-body-md font-bold text-primary-container border 
+                   border-primary-container/20 hover:bg-primary-fixed transition-all">
+                    Login to Locker
+                </button>
+
+                <a href="login.html"
+                    class="flex h-11 items-center justify-center rounded-lg bg-primary-container 
+              px-lg text-body-md font-bold text-on-primary shadow-premium 
+              hover:brightness-110 active:scale-95 transition-all">
+                    Start Onboarding
+                </a>
+
+            </div>
+        </div>
+    </header>
+    <div class="relative flex h-auto min-h-screen w-full flex-col bg-slate-50 group/design-root overflow-x-hidden"
+        style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
+        <div class="layout-container flex h-full grow flex-col">
+            <div class="px-4 lg:px-40 flex flex-1 justify-center py-5">
+                <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+                    <!-- Shared Header Component -->
+
+                    <div class="flex flex-wrap justify-between gap-3 p-4">
+                        <div class="flex min-w-72 flex-col gap-3 " style="margin-top: 4.25rem;">
+                            <p class="text-[#0e141b] tracking-light text-[32px] font-bold leading-tight">Aadhaar
+                                Authentication</p>
+                            <p class="text-[#4e7097] text-sm font-normal leading-normal">Verify your identity using
+                                Aadhaar to proceed with ABHA creation.</p>
+                        </div>
+                    </div>
+                    <div class="flex px-4 py-3">
+                        <div class="flex h-10 flex-1 items-center justify-center rounded-lg bg-[#e7edf3] p-1">
+                            <label
+                                class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-slate-50 has-[:checked]:shadow-[0_0_4px_rgba(0,0,0,0.1)] has-[:checked]:text-[#0e141b] text-[#4e7097] text-sm font-medium leading-normal">
+                                <span class="truncate">Aadhaar OTP</span>
+                                <input checked="" class="invisible w-0" name="auth_method" type="radio"
+                                    value="Aadhaar OTP" />
+                            </label>
+                            <label
+                                class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-slate-50 has-[:checked]:shadow-[0_0_4px_rgba(0,0,0,0.1)] has-[:checked]:text-[#0e141b] text-[#4e7097] text-sm font-medium leading-normal">
+                                <span class="truncate">Biometric Scan</span>
+                                <input class="invisible w-0" name="auth_method" type="radio" value="Biometric Scan" />
+                            </label>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center py-8">
+                        <h3
+                            class="text-[#0e141b] tracking-light text-2xl font-bold leading-tight px-4 text-center pb-2">
+                            Enter 6-digit OTP</h3>
+                        <p class="text-[#4e7097] text-base font-normal leading-normal pb-6 pt-1 px-4 text-center">
+                            An OTP has been sent to the mobile number linked with your Aadhaar (Ending in 4589)
+                        </p>
+                        <!-- OTP Input Group -->
+                        <div class="flex gap-3 mb-8">
+                            <input
+                                class="otp-input w-12 h-14 text-center text-2xl font-bold rounded-lg border-2 border-outline-variant bg-surface-container-lowest focus:border-primary outline-none transition-all"
+                                maxlength="1" type="text" value="4" />
+                            <input
+                                class="otp-input w-12 h-14 text-center text-2xl font-bold rounded-lg border-2 border-outline-variant bg-surface-container-lowest focus:border-primary outline-none transition-all"
+                                maxlength="1" type="text" value="8" />
+                            <input
+                                class="otp-input w-12 h-14 text-center text-2xl font-bold rounded-lg border-2 border-outline-variant bg-surface-container-lowest focus:border-primary outline-none transition-all"
+                                maxlength="1" type="text" value="2" />
+                            <input
+                                class="otp-input w-12 h-14 text-center text-2xl font-bold rounded-lg border-2 border-outline-variant bg-surface-container-lowest focus:border-primary outline-none transition-all"
+                                maxlength="1" placeholder="·" type="text" />
+                            <input
+                                class="otp-input w-12 h-14 text-center text-2xl font-bold rounded-lg border-2 border-outline-variant bg-surface-container-lowest focus:border-primary outline-none transition-all"
+                                maxlength="1" placeholder="·" type="text" />
+                            <input
+                                class="otp-input w-12 h-14 text-center text-2xl font-bold rounded-lg border-2 border-outline-variant bg-surface-container-lowest focus:border-primary outline-none transition-all"
+                                maxlength="1" placeholder="·" type="text" />
+                        </div>
+                        <div class="flex flex-col items-center gap-4 w-full px-4">
+                            <button
+                                class="w-full max-w-sm py-4 bg-primary text-on-primary rounded-lg font-bold text-lg shadow-lg hover:shadow-xl transition-all">
+                                <a href="patient_dashboard.html"> Verify OTP</a>
+                            </button>
+                            <button class="text-primary font-semibold text-sm hover:underline">
+                                Resend OTP in 00:45
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Technical Status Panel -->
+                    <div class="mt-8 px-4">
+                        <div class="bg-surface-container-low rounded-xl p-6 border border-outline-variant shadow-sm">
+                            <div class="flex items-center justify-between border-b border-outline-variant pb-4 mb-4">
+                                <h4 class="font-bold text-on-surface">Connection Status</h4>
+                                <div class="flex items-center gap-2 px-3 py-1 bg-secondary/10 rounded-full">
+                                    <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                                    <span
+                                        class="text-xs font-bold text-secondary uppercase tracking-wider">Secure</span>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="p-2 bg-primary/10 rounded-lg">
+                                        <span class="material-symbols-outlined text-primary"
+                                            data-icon="lock">lock</span>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-bold text-on-surface">End-to-End Encryption</p>
+                                        <p class="text-xs text-on-surface-variant">Your Aadhaar details are encrypted
+                                            with 256-bit SSL before transmission.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <div class="p-2 bg-primary/10 rounded-lg">
+                                        <span class="material-symbols-outlined text-primary"
+                                            data-icon="cloud_done">cloud_done</span>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-bold text-on-surface">ABDM Connected</p>
+                                        <p class="text-xs text-on-surface-variant">Live link established with National
+                                            Health Authority servers.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Security Banner -->
+                    <div class="mt-10 px-4 mb-10">
+                        <div
+                            class="relative overflow-hidden rounded-xl bg-primary-container p-6 flex flex-col md:flex-row items-center gap-6">
+                            <div class="flex-1">
+                                <h3 class="text-on-primary-container text-xl font-bold mb-2">Privacy is our Priority
+                                </h3>
+                                <p class="text-on-primary-container/80 text-sm">We never store your Aadhaar number or
+                                    biometric data on our servers. This authentication is handled directly by UIDAI via
+                                    the ABDM gateway.</p>
+                            </div>
+                            <div class="hidden md:block">
+                                <img alt="Secure digital vault"
+                                    class="w-32 h-32 object-cover rounded-lg shadow-md rotate-3"
+                                    data-alt="A stylized 3D render of a secure digital vault and a glowing shield symbol floating in a clean, minimalist space. The background features soft gradients of deep blue and white, reflecting a professional healthcare-tech aesthetic. High-key lighting creates a sense of safety, transparency, and high-tech security. The overall mood is reliable and sophisticated."
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBL__1zSgY4LkFQyK-gxRCdY14Ti3E3T3ZQOANWVCrpbEEwxFTxuEjrHkHl0IA2efTdodErUkmCkgTdbwD02m29hdi9CAh4e2ncTf1zvyoRY-dlJMrjy7CJGMIuo3BKUE-l97XOO6mZhzPCQp-V5elrBmxJZG3oz5bbB_LFJ4uU-lfgDLdtMl1AMa6aLsRcYpv2P-Bv9T1Fg-Mf5MDmhx7PqWqDUR63uDpgLlx9N736RlcHm6k5yHzhhecy9c7dlJsfUB0w2ndnM9w" />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Alternative Biometric Hint -->
+                    <div class="px-4 pb-12">
+                        <div
+                            class="flex flex-col items-center gap-6 p-8 border-2 border-dashed border-outline-variant rounded-xl text-center">
+                            <span class="material-symbols-outlined text-outline text-5xl"
+                                data-icon="fingerprint">fingerprint</span>
+                            <div>
+                                <h4 class="font-bold text-on-surface mb-2">Switch to Biometric Scan?</h4>
+                                <p class="text-sm text-on-surface-variant max-w-sm">If you have a registered Startek or
+                                    Mantra device, you can use your fingerprint for instant verification.</p>
+                            </div>
+                            <a href="login.html"
+                                class="px-6 py-2 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary/5 transition-colors">
+                                Scan Fingerprint
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Security Note -->
+    <footer class="bg-inverse-surface text-on-primary-container py-xl px-margin">
+        <div class="mx-auto max-w-[1280px] grid grid-cols-1 md:grid-cols-4 gap-xl">
+            <div class="col-span-1 md:col-span-1">
+                <div class="flex items-center gap-3 text-white mb-md">
+                    <svg fill="none" height="24" viewbox="0 0 48 48" width="24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+                    </svg>
+                    <span class="font-headline-md text-headline-md">AbhaSetu</span>
+                </div>
+                <p class="text-label-sm text-outline-variant">Empowering Indians with digital health sovereignty
+                    through innovative technology and seamless integration.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-md">Platform</h4>
+                <ul class="flex flex-col gap-sm text-label-sm text-outline-variant">
+                    <li><a class="hover:text-white transition-colors" href="#">How it works</a></li>
+                    <li><a class="hover:text-white transition-colors" href="#">Find Hospitals</a></li>
+                    <li><a class="hover:text-white transition-colors" href="#">Health Records</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-md">Legal</h4>
+                <ul class="flex flex-col gap-sm text-label-sm text-outline-variant">
+                    <li><a class="hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+                    <li><a class="hover:text-white transition-colors" href="#">Terms of Service</a></li>
+                    <li><a class="hover:text-white transition-colors" href="#">Security</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-md">Connect</h4>
+                <div class="flex gap-md">
+                    <div
+                        class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 cursor-pointer transition-colors">
+                        <span class="material-symbols-outlined text-[20px]">mail</span>
+                    </div>
+                    <div
+                        class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 cursor-pointer transition-colors">
+                        <span class="material-symbols-outlined text-[20px]">language</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="mx-auto max-w-[1280px] mt-xl pt-lg border-t border-white/10 text-center text-label-sm text-outline-variant">
+            © 2024 AbhaSetu Digital Health. Part of Ayushman Bharat Digital Mission initiative.
+        </div>
+    </footer>
+</body>
+
+</html>

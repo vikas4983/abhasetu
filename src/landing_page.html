@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>AbhaSetu | Bridge to Better Health</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#005db7",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#f9f9ff",
+                        "primary": "#004d99",
+                        "tertiary-container": "#a64c00",
+                        "surface": "#f9f9ff",
+                        "secondary": "#1b6d24",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#dae5ff",
+                        "inverse-primary": "#a9c7ff",
+                        "background": "#f9f9ff",
+                        "inverse-surface": "#2e3037",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#813900",
+                        "surface-container-low": "#f2f3fb",
+                        "primary-fixed": "#d6e3ff",
+                        "on-tertiary-fixed-variant": "#753400",
+                        "on-secondary-fixed": "#002204",
+                        "secondary-container": "#a0f399",
+                        "on-secondary-fixed-variant": "#005312",
+                        "on-secondary-container": "#217128",
+                        "primary-container": "#1565c0",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#00468c",
+                        "outline": "#727783",
+                        "surface-variant": "#e1e2ea",
+                        "secondary-fixed": "#a3f69c",
+                        "surface-container-high": "#e7e8f0",
+                        "outline-variant": "#c2c6d4",
+                        "tertiary-fixed": "#ffdbc9",
+                        "primary-fixed-dim": "#a9c7ff",
+                        "surface-container-highest": "#e1e2ea",
+                        "surface-container": "#ecedf6",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#191c21",
+                        "on-primary-fixed": "#001b3d",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#d8dae2",
+                        "on-tertiary-container": "#ffdece",
+                        "on-surface-variant": "#424752",
+                        "tertiary-fixed-dim": "#ffb68c",
+                        "secondary-fixed-dim": "#88d982",
+                        "on-tertiary-fixed": "#321200",
+                        "on-background": "#191c21",
+                        "inverse-on-surface": "#eff0f9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "16px",
+                        "xl": "24px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "margin": "32px",
+                        "lg": "24px",
+                        "container-max": "1440px",
+                        "gutter": "24px",
+                        "xl": "40px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display-xl": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.5);
+        }
+
+        .shadow-premium {
+            box-shadow: 0 4px 20px -2px rgba(21, 101, 192, 0.08);
+        }
+
+        .shadow-modal {
+            box-shadow: 0 12px 40px -4px rgba(0, 0, 0, 0.12);
+        }
+    </style>
+</head>
+
+<body class="bg-background font-['Inter'] text-on-surface">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+        <header
+            class="fixed top-0 z-50 w-full border-b border-outline-variant bg-white/80 backdrop-blur-md px-margin py-md">
+            <div class="mx-auto flex max-w-[1280px] items-center justify-between">
+                <a href="landing_page.html" class="flex items-center gap-3">
+                    <div class="text-primary-container">
+                        <svg fill="none" height="32" viewbox="0 0 48 48" width="32"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                    <span class="font-headline-lg text-headline-md tracking-tight text-on-surface">AbhaSetu</span>
+                </a>
+                <nav class="hidden md:flex items-center gap-xl">
+                    <a class="text-body-md font-semibold text-on-surface-variant hover:text-primary transition-colors"
+                        href="#">How it Works</a>
+                    <a class="text-body-md font-semibold text-on-surface-variant hover:text-primary transition-colors"
+                        href="#">Health Locker</a>
+                    <a class="text-body-md font-semibold text-on-surface-variant hover:text-primary transition-colors"
+                        href="#">Hospitals</a>
+                    <a class="text-body-md font-semibold text-on-surface-variant hover:text-primary transition-colors"
+                        href="#">ABDM Journey</a>
+                    <a class="text-body-md font-medium text-on-surface-variant hover:text-primary transition-colors"
+                        href="#">Benefits</a>
+                    <a class="text-body-md font-medium text-on-surface-variant hover:text-primary transition-colors"
+                        href="#">Contact</a>
+                </nav>
+                <div class="flex items-center gap-md">
+
+                    <button
+                        class="hidden sm:flex h-11 items-center justify-center rounded-lg px-lg 
+                   text-body-md font-bold text-primary-container border 
+                   border-primary-container/20 hover:bg-primary-fixed transition-all">
+                        Login to Locker
+                    </button>
+
+                    <a href="login.html"
+                        class="flex h-11 items-center justify-center rounded-lg bg-primary-container 
+              px-lg text-body-md font-bold text-on-primary shadow-premium 
+              hover:brightness-110 active:scale-95 transition-all">
+                        Start Onboarding
+                    </a>
+
+                </div>
+            </div>
+        </header>
+        <main class="flex-1 pt-24">
+            <!-- Hero Slider Section -->
+            <section class="relative h-[600px] lg:h-[750px] overflow-hidden bg-surface-container">
+                <div class="slider-container flex h-full overflow-x-auto overflow-y-hidden transition-all duration-700 ease-in-out"
+                    id="heroSlider">
+                    <!-- Slide 1: Universal Health Identity -->
+                    <div class="slide relative h-full w-full flex-shrink-0">
+                        <div class="absolute inset-0 bg-cover bg-center"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAgolgfr_K0vs1UHmMhRo-S7yHsoCR2M3nyQpBXtaEIwiNisQmbokvjE1nPAy9lT5i8LXijTtYEr3cM7TbmCVTgzrkUUYPJc21htl_St6dY3po0gVxU7SDGZy_lJ29MYszcwk9-tLWGRsIAjYZFL8yLQ9utFCPN63LIX6PjvNj6bpjlkn3BS_NJQV_OIVfU1_zsd1Oy11_XkmVfmypCyPNATKZWRaHSgUGUynRp3TfhiJ3w5ksPatlBCDh9iU39cEmuryJF789tkfA')">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/40 to-transparent">
+                            </div>
+                        </div>
+                        <div class="relative z-10 mx-auto flex h-full max-w-[1280px] items-center px-margin">
+                            <div class="max-w-[640px] text-white">
+                                <div
+                                    class="mb-lg inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 backdrop-blur-md">
+                                    <span
+                                        class="material-symbols-outlined text-[18px] fill-1 text-primary-fixed">verified</span>
+                                    <span class="text-label-sm font-bold tracking-wider uppercase">Official ABDM
+                                        Partner</span>
+                                </div>
+                                <h1 class="font-headline-lg text-display-xl lg:text-[64px] leading-tight mb-md">
+                                    Universal Health Identity
+                                </h1>
+                                <p class="text-body-lg mb-xl opacity-90 leading-relaxed">
+                                    Your ABHA ID is the single gateway to India's digital healthcare ecosystem. Secure,
+                                    portable, and recognized nationwide.
+                                </p>
+                                <div class="flex flex-wrap gap-md">
+                                    <button
+                                        class="flex h-14 min-w-[200px] items-center justify-center rounded-lg bg-white px-xl text-body-md font-bold text-primary shadow-premium hover:scale-[1.03] transition-transform">
+                                        Start Onboarding
+                                    </button>
+                                    <button
+                                        class="flex h-14 min-w-[180px] items-center justify-center rounded-lg border-2 border-white/30 bg-white/10 px-lg text-body-md font-bold text-white backdrop-blur-md hover:bg-white/20 transition-colors">
+                                        Learn More
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 2: Your Medical Vault -->
+                    <div class="slide relative h-full w-full flex-shrink-0">
+                        <div class="absolute inset-0 bg-cover bg-center"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCqWxUE3pzs-8AFU22hvrrAe5vSGuVTvX260Ehm-ejvCs_olWaiQ_DrWIYW9LxFe-dS-MLjmKHQCWge-nU9CW_7krj6jaWxfcYvFbxNQxfzqFspsAph-tK1B3nTL4E29WLzqYF9fVpfiZ0Xpywmb6ILd4efor7nALWYEF1DybUpsiQ-z9LpM1a60m62eT09R1xODSDS5rjoUq39Qdn_W7K0MRwO9nKPEBihYn_6-9SxnyTGz0dABIBOnikYJB-I1cN6r-5LOmXrN2Q')">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-r from-secondary/80 via-secondary/40 to-transparent">
+                            </div>
+                        </div>
+                        <div class="relative z-10 mx-auto flex h-full max-w-[1280px] items-center px-margin">
+                            <div class="max-w-[640px] text-white">
+                                <div
+                                    class="mb-lg inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 backdrop-blur-md">
+                                    <span
+                                        class="material-symbols-outlined text-[18px] fill-1 text-secondary-fixed">shield_lock</span>
+                                    <span class="text-label-sm font-bold tracking-wider uppercase">Secure Storage</span>
+                                </div>
+                                <h1 class="font-headline-lg text-display-xl lg:text-[64px] leading-tight mb-md">
+                                    Your Medical Vault
+                                </h1>
+                                <p class="text-body-lg mb-xl opacity-90 leading-relaxed">
+                                    A secure Health Locker to manage all your reports, prescriptions, and historical
+                                    medical data with bank-grade encryption.
+                                </p>
+                                <div class="flex flex-wrap gap-md">
+                                    <button
+                                        class="flex h-14 min-w-[200px] items-center justify-center rounded-lg bg-white px-xl text-body-md font-bold text-secondary shadow-premium hover:scale-[1.03] transition-transform">
+                                        Start Onboarding
+                                    </button>
+                                    <button
+                                        class="flex h-14 min-w-[180px] items-center justify-center rounded-lg border-2 border-white/30 bg-white/10 px-lg text-body-md font-bold text-white backdrop-blur-md hover:bg-white/20 transition-colors">
+                                        Explore Vault
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 3: Instant Care Access -->
+                    <div class="slide relative h-full w-full flex-shrink-0">
+                        <div class="absolute inset-0 bg-cover bg-center"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAYO2kj2dllRh6LxHuNehJyA9GN6ZgTmtNkT0JfZ4Yx6t5ymlzP1-15VbNaG5P5p-Se6Uc87wPNQsZ4PXQeqbp1dzzakd6_1pDL2PeXqoH-4tQrJ-ENS1gAtJlAoLhBaAWMkCi6I3UvV40kJkaVEcsI7LIjMSuqTpus--ar0jCIBBLCHjsH-ERpHZwuxp96QrJg33X7rH0_dOsDbues1x3KeKGLLJtvvVV7fr0bwZQcQJMqdmu-GXsesIBZD9MKpncKCLaezSFr9wQ')">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-r from-primary-container/80 via-primary-container/40 to-transparent">
+                            </div>
+                        </div>
+                        <div class="relative z-10 mx-auto flex h-full max-w-[1280px] items-center px-margin">
+                            <div class="max-w-[640px] text-white">
+                                <div
+                                    class="mb-lg inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 backdrop-blur-md">
+                                    <span
+                                        class="material-symbols-outlined text-[18px] fill-1 text-primary-fixed">video_chat</span>
+                                    <span class="text-label-sm font-bold tracking-wider uppercase">Priority
+                                        Access</span>
+                                </div>
+                                <h1 class="font-headline-lg text-display-xl lg:text-[64px] leading-tight mb-md">
+                                    Instant Care Access
+                                </h1>
+                                <p class="text-body-lg mb-xl opacity-90 leading-relaxed">
+                                    Discover verified doctors, book priority hospital appointments, and consult via
+                                    tele-health in seconds.
+                                </p>
+                                <div class="flex flex-wrap gap-md">
+                                    <button
+                                        class="flex h-14 min-w-[200px] items-center justify-center rounded-lg bg-white px-xl text-body-md font-bold text-primary-container shadow-premium hover:scale-[1.03] transition-transform">
+                                        Start Onboarding
+                                    </button>
+                                    <button
+                                        class="flex h-14 min-w-[180px] items-center justify-center rounded-lg border-2 border-white/30 bg-white/10 px-lg text-body-md font-bold text-white backdrop-blur-md hover:bg-white/20 transition-colors">
+                                        Find Doctors
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slider Controls -->
+                <div class="absolute bottom-10 left-1/2 z-20 flex -translate-x-1/2 gap-3">
+                    <button class="h-1.5 w-12 rounded-full bg-white transition-all duration-300" id="dot-0"
+                        onclick="scrollToSlide(0)"></button>
+                    <button class="h-1.5 w-12 rounded-full bg-white/40 transition-all duration-300" id="dot-1"
+                        onclick="scrollToSlide(1)"></button>
+                    <button class="h-1.5 w-12 rounded-full bg-white/40 transition-all duration-300" id="dot-2"
+                        onclick="scrollToSlide(2)"></button>
+                </div>
+                <!-- Navigation Arrows -->
+                <button
+                    class="absolute left-6 top-1/2 z-20 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-md hover:bg-white/20 transition-all sm:flex hidden"
+                    onclick="scrollPrev()">
+                    <span class="material-symbols-outlined">chevron_left</span>
+                </button>
+                <button
+                    class="absolute right-6 top-1/2 z-20 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-md hover:bg-white/20 transition-all sm:flex hidden"
+                    onclick="scrollNext()">
+                    <span class="material-symbols-outlined">chevron_right</span>
+                </button>
+            </section>
+            <script>
+                const slider = document.getElementById('heroSlider');
+                const dots = [document.getElementById('dot-0'), document.getElementById('dot-1'), document.getElementById('dot-2')];
+                let currentSlide = 0;
+
+                function scrollToSlide(index) {
+                    currentSlide = index;
+                    slider.scrollTo({
+                        left: slider.offsetWidth * index,
+                        behavior: 'smooth'
+                    });
+                    updateDots();
+                }
+
+                function scrollNext() {
+                    currentSlide = (currentSlide + 1) % 3;
+                    scrollToSlide(currentSlide);
+                }
+
+                function scrollPrev() {
+                    currentSlide = (currentSlide - 1 + 3) % 3;
+                    scrollToSlide(currentSlide);
+                }
+
+                function updateDots() {
+                    dots.forEach((dot, index) => {
+                        if (index === currentSlide) {
+                            dot.classList.replace('bg-white/40', 'bg-white');
+                        } else {
+                            dot.classList.replace('bg-white', 'bg-white/40');
+                        }
+                    });
+                }
+
+                // Auto-advance
+                setInterval(scrollNext, 6000);
+            </script>
+
+            <!-- How It Works (The Process) -->
+            <section class="px-margin py-24 bg-white overflow-hidden">
+                <div class="mx-auto max-w-[1280px]">
+                    <div class="text-center mb-20">
+                        <h2 class="font-headline-lg text-headline-lg lg:text-[40px] text-on-surface mb-md">Your Digital
+                            Health Journey</h2>
+                        <p class="text-body-lg text-on-surface-variant max-w-[600px] mx-auto">Get started in under 2
+                            minutes with our streamlined onboarding process.</p>
+                    </div>
+                    <div class="relative grid grid-cols-1 md:grid-cols-4 gap-xl">
+                        <!-- Step 1 -->
+                        <div class="step-line relative flex flex-col items-center text-center z-10">
+                            <div
+                                class="w-12 h-12 rounded-full bg-primary-container text-white flex items-center justify-center font-bold mb-md relative z-10 shadow-lg">
+                                1</div>
+                            <h4 class="font-bold text-on-surface mb-sm">Link Aadhaar</h4>
+                            <p class="text-label-sm text-on-surface-variant">Secure KYC verification using your Aadhaar
+                                or Mobile.</p>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="step-line relative flex flex-col items-center text-center z-10">
+                            <div
+                                class="w-12 h-12 rounded-full bg-primary-container text-white flex items-center justify-center font-bold mb-md relative z-10 shadow-lg">
+                                2</div>
+                            <h4 class="font-bold text-on-surface mb-sm">Create ABHA</h4>
+                            <p class="text-label-sm text-on-surface-variant">Generate your unique 14-digit Health ID
+                                instantly.</p>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="step-line relative flex flex-col items-center text-center z-10">
+                            <div
+                                class="w-12 h-12 rounded-full bg-primary-container text-white flex items-center justify-center font-bold mb-md relative z-10 shadow-lg">
+                                3</div>
+                            <h4 class="font-bold text-on-surface mb-sm">Sync Records</h4>
+                            <p class="text-label-sm text-on-surface-variant">Fetch your historical records from
+                                hospitals &amp; labs.</p>
+                        </div>
+                        <!-- Step 4 -->
+                        <div class="flex flex-col items-center text-center z-10">
+                            <div
+                                class="w-12 h-12 rounded-full bg-primary-container text-white flex items-center justify-center font-bold mb-md relative z-10 shadow-lg">
+                                4</div>
+                            <h4 class="font-bold text-on-surface mb-sm">Access Anywhere</h4>
+                            <p class="text-label-sm text-on-surface-variant">Manage your health on-the-go with one
+                                simple app.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-surface-container-low px-margin py-xl">
+                <div class="mx-auto max-w-[1280px]">
+                    <div class="flex flex-col items-center text-center mb-xl">
+                        <h2 class="font-headline-lg text-headline-lg text-on-surface mb-sm">How It Works</h2>
+                        <p class="text-body-md text-on-surface-variant max-w-[600px]">Three simple steps to digitize
+                            your entire medical journey and experience seamless care.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+                        <div
+                            class="flex flex-col gap-md bg-white p-lg rounded-lg border border-outline-variant shadow-premium hover:border-primary-container/30 transition-all">
+                            <div
+                                class="w-12 h-12 bg-primary-fixed/30 rounded-lg flex items-center justify-center text-primary-container">
+                                <span class="material-symbols-outlined text-[28px]">fingerprint</span>
+                            </div>
+                            <h3 class="text-headline-md text-on-surface">Create ABHA ID</h3>
+                            <p class="text-body-md text-on-surface-variant leading-relaxed">Register instantly using
+                                your Aadhaar or Mobile number to generate your unique 14-digit Health Account ID.</p>
+                        </div>
+                        <div
+                            class="flex flex-col gap-md bg-white p-lg rounded-lg border border-outline-variant shadow-premium hover:border-primary-container/30 transition-all">
+                            <div
+                                class="w-12 h-12 bg-secondary-container/30 rounded-lg flex items-center justify-center text-secondary">
+                                <span class="material-symbols-outlined text-[28px]">link</span>
+                            </div>
+                            <h3 class="text-headline-md text-on-surface">Link Records</h3>
+                            <p class="text-body-md text-on-surface-variant leading-relaxed">Connect with labs and
+                                clinics to fetch your existing medical reports, prescriptions, and history
+                                automatically.</p>
+                        </div>
+                        <div
+                            class="flex flex-col gap-md bg-white p-lg rounded-lg border border-outline-variant shadow-premium hover:border-primary-container/30 transition-all">
+                            <div
+                                class="w-12 h-12 bg-tertiary-fixed/30 rounded-lg flex items-center justify-center text-tertiary">
+                                <span class="material-symbols-outlined text-[28px]">calendar_today</span>
+                            </div>
+                            <h3 class="text-headline-md text-on-surface">Access Services</h3>
+                            <p class="text-body-md text-on-surface-variant leading-relaxed">Book appointments with top
+                                doctors, manage follow-ups, and share records securely with practitioners.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ABHA Benefits & Journey Section -->
+            <section class="px-margin py-24 bg-surface-container">
+                <div class="mx-auto max-w-[1280px] flex flex-col lg:flex-row items-center gap-20">
+                    <div class="lg:w-1/2 space-y-lg">
+                        <h2 class="font-headline-lg text-headline-lg lg:text-[40px] text-on-surface">The Future of
+                            Indian Healthcare is Digital</h2>
+                        <p class="text-body-lg text-on-surface-variant">Ayushman Bharat Digital Mission (ABDM) is a
+                            landmark initiative to digitize India's healthcare infrastructure. Your ABHA ID is the key
+                            to unlocking this ecosystem.</p>
+                        <div class="space-y-md">
+                            <div class="flex items-start gap-md p-md bg-white/50 rounded-lg border border-white">
+                                <span
+                                    class="material-symbols-outlined text-primary-container fill-1">check_circle</span>
+                                <div>
+                                    <h5 class="font-bold">Interoperability</h5>
+                                    <p class="text-body-md text-on-surface-variant">Share health records seamlessly
+                                        between public and private hospitals nationwide.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-md p-md bg-white/50 rounded-lg border border-white">
+                                <span
+                                    class="material-symbols-outlined text-primary-container fill-1">check_circle</span>
+                                <div>
+                                    <h5 class="font-bold">Paperless Experience</h5>
+                                    <p class="text-body-md text-on-surface-variant">Forget carrying physical files;
+                                        your
+                                        entire history is in your pocket.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-md p-md bg-white/50 rounded-lg border border-white">
+                                <span
+                                    class="material-symbols-outlined text-primary-container fill-1">check_circle</span>
+                                <div>
+                                    <h5 class="font-bold">Total Consent Control</h5>
+                                    <p class="text-body-md text-on-surface-variant">You decide exactly who sees your
+                                        data and for how long.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <div class="aspect-square rounded-2xl bg-cover bg-center shadow-modal relative overflow-hidden"
+                            data-alt="Indian doctor with patient in a digital-first clinic"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAvj8WrJcUlPdW1mXivM8zXgZaqyyA8RU8aUvLe_uBqB3gIcWRsGyBWYpl8xto7cTCXyZIKUone8C_fEZ7qBostpC4XyuZYMFMKEC95atYHtNTqCqL5xahVTAO2wZKFCURxcS_anVIPqT1BwHxcX0LipQKzOMFmJxdgA6YoKwF5l8ZYXlFfLrCmu8vz8_Q77BxRXRkytuFB6HPHy3i3kdTGNser7ZHRtcgvBTfbAmHexnBwym38UsDOap0u9RSRdM274VnGkIL_bCA')">
+                            <div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Vision & Mission -->
+            <!-- <section class="py-xl px-margin bg-surface">
+                <div class="max-w-container-max mx-auto grid md:grid-cols-2 gap-gutter"> -->
+            <!-- Vision Card -->
+            <!-- <div class="bg-surface-container-lowest p-xl rounded-xl border border-outline-variant tonal-shadow">
+                        <div class="size-12 bg-primary-fixed flex items-center justify-center rounded-lg mb-md">
+                            <span class="material-symbols-outlined text-primary"
+                                data-icon="visibility">visibility</span>
+                        </div>
+                        <h2 class="text-headline-md mb-sm text-on-surface">Our Vision</h2>
+                        <p class="text-body-md text-on-surface-variant">
+                            We envision a future where every Indian citizen has seamless access to their health records
+                            and
+                            quality healthcare services at their fingertips, leveraging the power of the Ayushman Bharat
+                            Digital Mission to eliminate geographical and economic barriers.
+                        </p>
+                    </div> -->
+            <!-- Mission Card -->
+            <!-- <div class="bg-surface-container-lowest p-xl rounded-xl border border-outline-variant tonal-shadow">
+                        <div class="size-12 bg-secondary-container flex items-center justify-center rounded-lg mb-md">
+                            <span class="material-symbols-outlined text-secondary" data-icon="highways">road</span>
+                        </div>
+                        <h2 class="text-headline-md mb-sm text-on-surface">Our Mission</h2>
+                        <p class="text-body-md text-on-surface-variant">
+                            Building the digital highway for healthcare delivery. We create robust, secure, and
+                            interoperable digital infrastructures that connect patients, providers, and payers, ensuring
+                            that life-saving data flows faster than the speed of treatment.
+                        </p>
+                    </div>
+                </div>
+            </section> -->
+
+            <!-- Our Story -->
+            <!-- <section class="py-xl px-margin bg-white">
+                <div class="max-w-container-max mx-auto">
+                    <div class="flex flex-col md:flex-row gap-xl items-center">
+                        <div class="w-full md:w-1/2 rounded-xl overflow-hidden tonal-shadow">
+                            <img class="w-full h-full object-cover min-h-[400px]"
+                                data-alt="A panoramic wide shot of a modern Indian healthcare facility with large windows and bright sunlight filtering through. Professionals in white coats are walking through a clean, minimalist corridor that features high-tech digital signage. The visual style is premium and corporate, utilizing a bright color palette with soft slate and primary blue tones to emphasize precision and innovation."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfRzi6gLqpz0Z4lN8SBlVED28P5LFx92eepHZFXGH5kmilFrjzti8e0pqnhOi6QvdC5rnPgA7LZUJtyYN9DYRcxoHaN31azwW3HYaAbo49mF9zyNKgHZJDvbTgDM3vGlyflNuU1KUfYt7ddzOOTfEffZtDpMiJK48fsOFj0Ds-545LkZqXC9jFydS7txl0JjxAIxqEmH_kSoGoZvQoiqPNhisqtQB5DwVht9TH7Qv-tlw_ZYkRXogw0kKrRr57wgKGUoIyqBwAQXI" />
+                        </div>
+                        <div class="w-full md:w-1/2 flex flex-col gap-md">
+                            <h2 class="text-headline-lg text-on-surface">Our Story</h2>
+                            <p class="text-body-md text-on-surface-variant">
+                                AbhaSetu began with a simple observation: while India's digital economy was booming,
+                                healthcare remained siloed and paper-heavy. Founded by a team of healthcare veterans and
+                                technology architects, we set out to build the 'Setu' (bridge) that would connect the
+                                millions of fragmented health records across the nation.
+                            </p>
+                            <p class="text-body-md text-on-surface-variant">
+                                By working closely with the National Health Authority (NHA), we have developed solutions
+                                that are not just compliant with the ABDM framework but are designed to exceed the
+                                expectations of users—making digital health a reality for rural and urban populations
+                                alike.
+                            </p>
+                            <div class="flex gap-lg mt-md">
+                                <div>
+                                    <p class="text-headline-md text-primary">500+</p>
+                                    <p class="text-label-sm text-on-surface-variant uppercase">Hospitals Integrated</p>
+                                </div>
+                                <div class="w-px bg-outline-variant h-12"></div>
+                                <div>
+                                    <p class="text-headline-md text-primary">10M+</p>
+                                    <p class="text-label-sm text-on-surface-variant uppercase">Health IDs Created</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+
+            <!-- Core Values -->
+            <section class="py-xl px-margin bg-surface-container-low">
+                <div class="max-w-container-max mx-auto text-center mb-xl">
+                    <h2 class="text-headline-lg mb-sm">Values That Drive Us</h2>
+                    <p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto">Our commitment to the nation is
+                        built
+                        on three unbreakable pillars of modern digital healthcare.</p>
+                </div>
+                <div class="max-w-container-max mx-auto grid md:grid-cols-3 gap-gutter">
+                    <div class="bg-white p-lg rounded-lg border border-outline-variant text-center">
+                        <div class="size-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-md">
+                            <span class="material-symbols-outlined text-primary text-3xl"
+                                data-icon="shield">shield</span>
+                        </div>
+                        <h3 class="text-headline-md mb-xs text-on-surface">Trust</h3>
+                        <p class="text-body-md text-on-surface-variant">Earning the confidence of patients and
+                            providers
+                            through unwavering reliability and patient-first protocols.</p>
+                    </div>
+                    <div class="bg-white p-lg rounded-lg border border-outline-variant text-center">
+                        <div class="size-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-md">
+                            <span class="material-symbols-outlined text-primary text-3xl"
+                                data-icon="visibility">visibility</span>
+                        </div>
+                        <h3 class="text-headline-md mb-xs text-on-surface">Transparency</h3>
+                        <p class="text-body-md text-on-surface-variant">Clear communication and open standards that
+                            ensure
+                            every stakeholder knows how data is handled and used.</p>
+                    </div>
+                    <div class="bg-white p-lg rounded-lg border border-outline-variant text-center">
+                        <div class="size-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-md">
+                            <span class="material-symbols-outlined text-primary text-3xl" data-icon="lock">lock</span>
+                        </div>
+                        <h3 class="text-headline-md mb-xs text-on-surface">Security</h3>
+                        <p class="text-body-md text-on-surface-variant">Bank-grade encryption and consent-driven access
+                            controls to keep personal health data private and safe.</p>
+                    </div>
+                </div>
+            </section>
+            <!-- Leadership -->
+            <section class="py-xl px-margin bg-surface-container-lowest">
+                <div class="max-w-container-max mx-auto">
+                    <div class="flex justify-between items-end mb-xl">
+                        <div class="max-w-2xl">
+                            <h2 class="text-headline-lg">Leadership Team</h2>
+                            <p class="text-body-md text-on-surface-variant">A collective of visionaries dedicated to
+                                reshaping the healthcare landscape of India.</p>
+                        </div>
+                        <button class="hidden md:block text-primary font-bold hover:underline flex items-center gap-1">
+                            View All Team <span class="material-symbols-outlined text-base"
+                                data-icon="arrow_forward">arrow_forward</span>
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+                        <!-- Leader 1 -->
+                        <div class="group">
+                            <div class="aspect-[3/4] rounded-xl overflow-hidden mb-md border border-outline-variant">
+                                <img class="w-full h-full object-cover transition-transform group-hover:scale-105"
+                                    data-alt="A professional headshot of a middle-aged Indian executive man with a friendly yet authoritative expression, wearing a sharp navy blue suit in a brightly lit modern office setting. The background is softly blurred showing a contemporary glass architecture. The lighting is high-key and flattering, emphasizing a mood of corporate leadership and professional integrity."
+                                    src="images/screen.png" />
+                            </div>
+                            <h3 class="text-headline-md text-on-surface">Dr. Rahul Sharma</h3>
+                            <p class="text-label-sm text-primary uppercase font-bold">Chief Executive Officer</p>
+                        </div>
+                        <!-- Leader 2 -->
+                        <div class="group">
+                            <div class="aspect-[3/4] rounded-xl overflow-hidden mb-md border border-outline-variant">
+                                <img class="w-full h-full object-cover transition-transform group-hover:scale-105"
+                                    data-alt="A professional headshot of an Indian female executive with a confident smile, wearing business attire in a sleek, minimalist environment. The background features subtle geometric patterns of a modern tech office. The lighting is crisp and clear, creating a sophisticated corporate portrait that communicates intelligence and progressive thinking."
+                                    src="images/screen1.png" />
+                            </div>
+                            <h3 class="text-headline-md text-on-surface">Ananya Iyer</h3>
+                            <p class="text-label-sm text-primary uppercase font-bold">Chief Product Officer</p>
+                        </div>
+                        <!-- Leader 3 -->
+                        <div class="group">
+                            <div class="aspect-[3/4] rounded-xl overflow-hidden mb-md border border-outline-variant">
+                                <img class="w-full h-full object-cover transition-transform group-hover:scale-105"
+                                    data-alt="A professional portrait of a senior tech leader with glasses, looking thoughtful, in a high-tech environment with soft blue glowing monitors in the background. The aesthetic is clean and modern, highlighting a sense of technological mastery and focus. The lighting uses soft transitions and deep slate tones for a premium executive feel."
+                                    src="images/screen2.png" />
+                            </div>
+                            <h3 class="text-headline-md text-on-surface">Vikram Malhotra</h3>
+                            <p class="text-label-sm text-primary uppercase font-bold">Chief Technology Officer</p>
+                        </div>
+                        <!-- Leader 4 -->
+                        <div class="group">
+                            <div class="aspect-[3/4] rounded-xl overflow-hidden mb-md border border-outline-variant">
+                                <img class="w-full h-full object-cover transition-transform group-hover:scale-105"
+                                    data-alt="A professional headshot of a young Indian male executive in a smart casual outfit, set against a bright, modern co-working space background. The mood is energetic and innovative, with natural light flooding the scene. The image uses a palette of soft whites and warm wood tones, reflecting a modern, accessible leadership style."
+                                    src="images/screen3.png" />
+                            </div>
+                            <h3 class="text-headline-md text-on-surface">Siddharth Varma</h3>
+                            <p class="text-label-sm text-primary uppercase font-bold">Head of Strategic Partnerships
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- CTA Section -->
+            <section class="py-xl px-margin bg-primary text-on-primary">
+                <div class="max-w-container-max mx-auto text-center py-lg">
+                    <h2 class="text-display-xl font-headline-lg mb-md">Join the Revolution</h2>
+                    <p class="text-body-lg mb-xl max-w-2xl mx-auto opacity-90">Ready to transform how healthcare is
+                        delivered and accessed? Partner with us to build a healthier India.</p>
+                    <div class="flex flex-col sm:flex-row gap-md justify-center">
+                        <button
+                            class="bg-white text-primary px-xl h-12 rounded-lg font-bold hover:bg-on-primary-container transition-colors">Partner
+                            With Us</button>
+                        <button
+                            class="border border-white text-white px-xl h-12 rounded-lg font-bold hover:bg-white/10 transition-colors">Join
+                            Our Team</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="bg-inverse-surface text-on-primary-container py-xl px-margin">
+            <div class="mx-auto max-w-[1280px] grid grid-cols-1 md:grid-cols-4 gap-xl">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-3 text-white mb-md">
+                        <svg fill="none" height="24" viewbox="0 0 48 48" width="24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+                        </svg>
+                        <span class="font-headline-md text-headline-md">AbhaSetu</span>
+                    </div>
+                    <p class="text-label-sm text-outline-variant">Empowering Indians with digital health sovereignty
+                        through innovative technology and seamless integration.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-md">Platform</h4>
+                    <ul class="flex flex-col gap-sm text-label-sm text-outline-variant">
+                        <li><a class="hover:text-white transition-colors" href="#">How it works</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">Find Hospitals</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">Health Records</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-md">Legal</h4>
+                    <ul class="flex flex-col gap-sm text-label-sm text-outline-variant">
+                        <li><a class="hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">Terms of Service</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">Security</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-md">Connect</h4>
+                    <div class="flex gap-md">
+                        <div
+                            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 cursor-pointer transition-colors">
+                            <span class="material-symbols-outlined text-[20px]">mail</span>
+                        </div>
+                        <div
+                            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 cursor-pointer transition-colors">
+                            <span class="material-symbols-outlined text-[20px]">language</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="mx-auto max-w-[1280px] mt-xl pt-lg border-t border-white/10 text-center text-label-sm text-outline-variant">
+                © 2024 AbhaSetu Digital Health. Part of Ayushman Bharat Digital Mission initiative.
+            </div>
+        </footer>
+        <!-- <div class="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 backdrop-blur-sm p-4">
+            <div class="w-full max-w-[480px] overflow-hidden rounded-xl bg-white shadow-modal">
+                <div class="relative h-40 bg-primary-container bg-cover bg-center"
+                    data-alt="A professional networking or verification background image featuring abstract geometric shapes and light nodes connected by subtle lines. The color palette is dominated by healthcare blue and soft white light, creating a sense of connectivity, technology, and trust suitable for an official onboarding process."
+                    style="background-image: linear-gradient(rgba(21, 101, 192, 0.8), rgba(21, 101, 192, 0.8)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuDiVjN5W_APspHx_kS7rxvwe1BIIVY51XdxyGVbXeOUzkDgawZEIDvKuvEn8dB8oyFkVERuvPZEOvQaV6aIHPlKhugb-MNPrNFhgLwW4X8x1L94fzFXBk90JJqWBGn_0V8RMKjRjnHxUVEI2rIXkG7RSIrkAWGYqe_PKreNwI6zMIOBf8Q0trwjTDu6KHxBOC8tbzFBfiZ6_JSFNUL8YixKaDM7m4nYsrDViFVMUc5ay3nahr4PPbWnSw3LoJ6AA_a9qaP080Sb0Fo')">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center p-xl text-center text-white">
+                        <div class="mb-sm rounded-full bg-white/20 p-sm backdrop-blur-md">
+                            <span class="material-symbols-outlined text-[32px]">hub</span>
+                        </div>
+                        <h3 class="font-headline-md text-headline-md leading-tight">ABDM Onboarding</h3>
+                    </div>
+                </div>
+                <div class="p-xl">
+                    <div class="flex flex-col gap-md text-center">
+                        <h4 class="text-headline-md text-on-surface">Connect with ABDM?</h4>
+                        <p class="text-body-md text-on-surface-variant">
+                            Link your ABHA ID to access medical records, book appointments with verified doctors, and
+                            unlock full digital healthcare benefits.
+                        </p>
+                    </div>
+                    <div class="mt-xl flex flex-col gap-md">
+                        <button
+                            class="flex h-12 w-full items-center justify-center rounded-lg bg-primary-container px-lg text-body-md font-bold text-on-primary shadow-premium transition-transform hover:scale-[1.01] active:scale-[0.98]">
+                            Yes, Link Now
+                        </button>
+                        <button
+                            class="flex h-12 w-full items-center justify-center rounded-lg bg-surface-container-high px-lg text-body-md font-bold text-on-surface transition-colors hover:bg-surface-container-highest">
+                            Maybe Later
+                        </button>
+                    </div>
+                    <div class="mt-md text-center">
+                        <p class="text-[12px] text-outline italic">By linking, you agree to ABDM Data Sharing policies.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</body>
+
+</html>
